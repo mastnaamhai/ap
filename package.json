@@ -1,0 +1,36 @@
+{
+  "name": "pharmabill-pro",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node backend/server.js",
+    "server:dev": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.30.0",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^3.0.4",
+    "jspdf-autotable": "^5.0.2",
+    "lucide-react": "^0.555.0",
+    "mongoose": "^9.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.6",
+    "recharts": "^3.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "nodemon": "^3.1.11",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
