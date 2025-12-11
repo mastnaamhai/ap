@@ -38,8 +38,8 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
             <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6">
               <Stethoscope size={32} className="text-white" />
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-2">PharmaBill</h1>
-            <p className="text-sky-100 text-lg mb-8">Professional Pharmacy Management System</p>
+            <h1 className="text-3xl md:text-4xl font-bold mb-2">ActiMed LifeScience</h1>
+            <p className="text-sky-100 text-lg mb-8">Advanced Life Sciences & Pharmacy Management</p>
             <div className="space-y-4 text-sky-50 text-sm hidden sm:block">
                <div className="flex items-center gap-3">
                  <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">✓</div>
@@ -95,7 +95,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
           </form>
           
           <p className="absolute bottom-6 left-0 w-full text-center text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} PharmaBill Pro. All rights reserved.
+            &copy; {new Date().getFullYear()} ActiMed LifeScience. All rights reserved.
           </p>
         </div>
 

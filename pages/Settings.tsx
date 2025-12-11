@@ -60,16 +60,22 @@ const SettingsPage = ({ onSave }: { onSave: () => void }) => {
   };
 
   // --- Data Management ---
-  const handleDownloadBackup = () => {
-    const jsonStr = db.createBackup();
-    const blob = new Blob([jsonStr], { type: "application/json" });
+  const handleDownloadBackup = async () => {
+    try {
+      const jsonStr = await db.createBackup();
+      const blob = new Blob([jsonStr], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `pharmabill_backup_${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `actimed_backup_${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Backup failed:', error);
+      alert('Failed to create backup. Please try again.');
+    }
   };
 
   const handleRestoreBackup = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -94,16 +100,22 @@ const SettingsPage = ({ onSave }: { onSave: () => void }) => {
     reader.readAsText(file);
   };
 
-  const handleExportCSV = () => {
-    const csvStr = db.exportInvoicesCSV();
-    const blob = new Blob([csvStr], { type: "text/csv;charset=utf-8;" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `sales_report_${new Date().toISOString().split('T')[0]}.csv`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+  const handleExportCSV = async () => {
+    try {
+      const csvStr = await db.exportInvoicesCSV();
+      const blob = new Blob([csvStr], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `sales_report_${new Date().toISOString().split('T')[0]}.csv`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Export failed:', error);
+      alert('Failed to export CSV. Please try again.');
+    }
   };
 
   return (

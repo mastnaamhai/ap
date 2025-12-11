@@ -134,7 +134,7 @@ const Sidebar = ({ pharmacyName, onLogout }: { pharmacyName: string; onLogout: (
               <Stethoscope className="text-white h-6 w-6" />
             </div>
             <div>
-              <h1 className="text-xl font-bold leading-none tracking-tight">PharmaBill</h1>
+              <h1 className="text-xl font-bold leading-none tracking-tight">ActiMed LifeScience</h1>
               <p className="text-xs text-slate-400 mt-1 font-medium tracking-wide opacity-80">PRO EDITION</p>
             </div>
           </div>
