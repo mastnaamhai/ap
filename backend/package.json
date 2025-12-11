@@ -1,7 +1,7 @@
 {
-  "name": "pharmabill-backend",
+  "name": "actimed-lifescience-backend",
   "version": "1.0.0",
-  "description": "Backend for PharmaBill app",
+  "description": "Backend for ActiMed LifeScience app",
   "main": "server.js",
   "type": "module",
   "scripts": {
