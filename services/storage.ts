@@ -1,8 +1,8 @@
 
 import { Product, Customer, Invoice, AppSettings } from '../types';
 
-// API Base URL - adjust for production
-const API_BASE = 'http://localhost:5000/api';
+// API Base URL - Uses environment variable for production, localhost for development
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5000/api';
 
 class ApiStorageService {
   private apiUrl = API_BASE;
